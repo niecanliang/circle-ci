@@ -15,18 +15,20 @@ jobs:
           paths:
             - ~/.m2
           key: circle-ci-{{ checksum "pom.xml" }}
-      - run: mvn package
+      - run: 
+          name: package
+          command: mvn package
       - store_test_results:
           path: target/surefire-reports
       
       - store_artifacts:
           path: target/circle-ci-0.0.1-SNAPSHOT.jar
-
-      - run: java -jar target/circle-ci-0.0.1-SNAPSHOT.jar
-      - run: echo '*****************执行完毕*****************'
+          
       - run: 
-          name: Request api /hello
-          command: curl  http://127.0.0.1:8001/hello
-     
+          name: deploy 
+          command: mvn deploy
+      - run: 
+          name: startup
+          command: java -jar target/circle-ci-0.0.1-SNAPSHOT.jar
           
       
