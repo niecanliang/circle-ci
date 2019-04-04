@@ -3,5 +3,5 @@ spring:
   application:
     name: circle-ci
 server:
-  port: 9511
+  port: ${SERVER_PORT:9511}
   
