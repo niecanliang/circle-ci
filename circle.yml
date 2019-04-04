@@ -13,7 +13,7 @@ jobs:
           paths:
             - ~/.m2
           key: circle-ci-{{ checksum "pom.xml" }}
-      - run: mvn package -Dskip.Tests
+      - run: mvn package
       - store_test_results:
           path: target/surefire-reports
       
