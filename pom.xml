@@ -20,8 +20,8 @@
 		<java.version>1.8</java.version>
 		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
 		<project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
-		<repository.url.snapshots>https://nexus-backend.handy.travel/repository/maven-snapshots</repository.url.snapshots>
-		<repository.url.releases>https://nexus-backend.handy.travel/repository/maven-releases</repository.url.releases>
+		<repository.url.snapshots>https://nexus-backend.handy.travel/repository/maven-snapshots/</repository.url.snapshots>
+		<repository.url.releases>https://nexus-backend.handy.travel/repository/maven-releases/</repository.url.releases>
 	</properties>
 
 	<dependencies>
