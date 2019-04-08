@@ -28,5 +28,5 @@ jobs:
 
       - run: java -jar target/circle-ci-0.0.1-SNAPSHOT.jar
 
-      - run: curl 127.0.0.1:${SERVER_PORT}/hello    
+      - run: echo curl 127.0.0.1:${SERVER_PORT}/hello    
       
