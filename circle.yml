@@ -3,12 +3,11 @@ jobs:
   build: 
     working_directory: ~/circle-ci
     docker: # run the steps with Docker
-#      - image: circleci/openjdk:8-jdk
       - image: maven:3.6.0-jdk-8
 #        environment: 
 #          SERVER_PORT: 8001
     steps: 
-      - checkout
+      - checkout 
       - restore_cache:
           key: circle-ci-{{ checksum "pom.xml" }}
       - run: mvn dependency:go-offline
@@ -21,15 +20,13 @@ jobs:
           command: mvn test
       - store_test_results:
           path: target/surefire-reports
-      
-#      - store_artifacts:
-#          path: target/circle-ci-0.0.1-SNAPSHOT.jar
           
-#      - run: 
-#          name: deploy 
-#          command: mvn deploy
-#      - run: 
-#          name: startup
-#          command: java -jar target/circle-ci-0.0.1-SNAPSHOT.jar
+      - run: mvn package
+      
+      - store_artifacts:
+          path: target/circle-ci-0.0.1-SNAPSHOT.jar
+
+      - run: java -jar target/circle-ci-0.0.1-SNAPSHOT.jar
+
           
       
