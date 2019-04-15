@@ -26,7 +26,8 @@ jobs:
       - store_artifacts:
           path: target/
 
-      - run: cd circle-ci/target && java -jar circle-ci-0.0.1-SNAPSHOT.jar &
+      - run: cd circle-ci/target && nohup java -jar circle-ci-0.0.1-SNAPSHOT.jar &
+      - run: echo curl 127.0.0.1:8001/hello
       - run: 
           name: Stop circleci server
           command: kill -9 `ps -ef|grep circle-ci|grep -v grep|awk '{print $2}'`
