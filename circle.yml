@@ -34,8 +34,6 @@ jobs:
       
       - run: ps -ef|grep circle-ci
       
-      - run: curl 127.0.0.1:8001/hello
-      
       - run: 
           name: Stop circleci server
           command: kill -9 `ps -ef|grep circle-ci|grep -v grep|awk '{print $2}'`
