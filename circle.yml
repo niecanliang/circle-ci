@@ -28,7 +28,7 @@ jobs:
 
       - run: cd circle-ci/target && nohup java -jar circle-ci-0.0.1-SNAPSHOT.jar &
       
-      - run: pwd && cat circle-ci/target/nohup.out
+      - run: pwd && cat target/nohup.out
       
       - run: ps -ef|grep circle-ci
       
