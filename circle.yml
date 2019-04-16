@@ -26,15 +26,15 @@ jobs:
       - store_artifacts:
           path: target/
 
-      - run:
-          name: start
-          command: cd target && java -jar circle-ci-0.0.1-SNAPSHOT.jar
-          background: true
-      - run: pwd && ls && cd target && ls
-      
-      - run: ps -ef|grep circle-ci
-      
-      - run: 
-          name: Stop circleci server
-          command: kill -9 `ps -ef|grep circle-ci|grep -v grep|awk '{print $2}'`
-      - run: ps -ef | grep circle-ci
+#      - run:
+#          name: start
+#          command: cd target && java -jar circle-ci-0.0.1-SNAPSHOT.jar
+#          background: true
+#      - run: pwd && ls && cd target && ls
+#      
+#      - run: ps -ef|grep circle-ci
+#      
+#      - run: 
+#          name: Stop circleci server
+#          command: kill -9 `ps -ef|grep circle-ci|grep -v grep|awk '{print $2}'`
+#      - run: ps -ef | grep circle-ci
