@@ -33,7 +33,14 @@ jobs:
       - run: pwd
       - run: ls
       
-
+workflows: 
+  version: 2.1
+  build-test: 
+    jobs:       
+      - build
+      - test: 
+          requires: 
+            - build
 #      - run:
 #          name: start
 #          command: cd target && java -jar circle-ci-0.0.1-SNAPSHOT.jar
