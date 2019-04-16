@@ -24,7 +24,13 @@ jobs:
       - run: mvn clean install package -Dmaven.test.skip=true -U
       
       - store_artifacts:
-          path: target/
+          path: ~/
+  test: 
+     working_directory: ~/circle-ci
+     steps: 
+      - run: pwd
+      - run: ls
+      
 
 #      - run:
 #          name: start
